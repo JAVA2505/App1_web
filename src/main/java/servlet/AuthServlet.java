@@ -1,5 +1,6 @@
 package servlet;
 
+import cache.ItemCacheService;
 import entity.User;
 import html.HtmlFormer;
 import service.AuthService;
@@ -16,6 +17,7 @@ public class AuthServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        ItemCacheService.isTimerStarted();
         response.setContentType("text/html;charset=UTF-8");
         response.getWriter().append(html.formAuthorization());
     }
