@@ -2,6 +2,8 @@ package cache;
 
 import dao.ItemDao;
 import entity.Item;
+import org.springframework.context.support.AbstractXmlApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.List;
 
@@ -11,10 +13,12 @@ public class ItemCacheService {
 
     static {
         timer = new Thread(() -> {
+            AbstractXmlApplicationContext context = new ClassPathXmlApplicationContext("ItemCacheContext");
+            ItemCache ic = (ItemCache)context.getBean("cacheItem");
             while (true) {
                 List<Item> items = idao.get();
                 for (Item i : items) {
-                    ItemCache.items.put(i.getId(), i);
+                    ic.items.put(i.getId(), i);
                 }
                 System.out.println("Items updated");
                 try {
