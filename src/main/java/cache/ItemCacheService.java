@@ -19,6 +19,7 @@ public class ItemCacheService {
                 System.out.println("Items updated");
                 try {
                     Thread.sleep(300000);
+
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
