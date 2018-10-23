@@ -19,9 +19,9 @@ import java.util.List;
 
 public class CartServlet extends HttpServlet {
 
-    private final HtmlFormer html = new HtmlFormer();
-    private final ItemService iserv = new ItemService();
-    private final AuthService auth = new AuthService();
+    private final HtmlFormer html = (HtmlFormer) SpringContextHolder.getContext().getBean("htmlformer");
+    private final ItemService iserv = (ItemService) SpringContextHolder.getContext().getBean("itemservice");
+    private final AuthService auth = (AuthService) SpringContextHolder.getContext().getBean("authservice");
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {

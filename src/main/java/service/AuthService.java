@@ -9,7 +9,7 @@ import spring.SpringContextHolder;
 import java.util.Random;
 
 public class AuthService {
-    private final UserDao udao = new UserDao();
+    private final UserDao udao = (UserDao)SpringContextHolder.getContext().getBean("userdao");
 
     public boolean checkCredentials(String login, String pass1, String pass2, String phone, String city) {
         if (login.length() == 0 || pass1.length() == 0 || phone.length() == 0 || city.length() == 0) {

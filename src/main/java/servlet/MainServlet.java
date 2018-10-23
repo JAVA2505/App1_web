@@ -15,7 +15,7 @@ import java.util.List;
 
 public class MainServlet extends HttpServlet {
 
-    private final HtmlFormer html = new HtmlFormer();
+    private final HtmlFormer html = (HtmlFormer) SpringContextHolder.getContext().getBean("htmlformer");
     private final ItemService iserv = (ItemService) SpringContextHolder.getContext().getBean("iserv");
 
     @Override

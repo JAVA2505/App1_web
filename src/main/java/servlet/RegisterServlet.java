@@ -2,6 +2,7 @@ package servlet;
 
 import html.HtmlFormer;
 import service.AuthService;
+import spring.SpringContextHolder;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,8 +15,8 @@ public class RegisterServlet extends HttpServlet {
     private static final String REGISTER = "Register Page";
     private static final String CONTENT_TYPE = "text/html;charset=UTF-8";
 
-    private final HtmlFormer html = new HtmlFormer();
-    private final AuthService auth = new AuthService();
+    private final HtmlFormer html = (HtmlFormer) SpringContextHolder.getContext().getBean("htmlformer");
+    private final AuthService auth = (AuthService) SpringContextHolder.getContext().getBean("authservice");
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {

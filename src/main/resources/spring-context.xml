@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+    <bean id="idao" class="dao.ItemDao" scope="singleton"></bean>
+
+    <bean id="userdao" class="dao.UserDao" scope="singleton"></bean>
+
+    <bean id="gson" class="com.google.gson.Gson"></bean>
+
+    <bean id="user" class="entity.User" scope="prototype"></bean>
+
+    <bean id="cart" class="cart.CartItems" scope="prototype"></bean>
+
+    <bean id="iserv" class="service.ItemService" lazy-init="true"></bean>
+
+    <bean id="authservice" class="service.AuthService" scope="singleton"></bean>
+
+    <bean id="itemservice" class="service.ItemService" scope="singleton"></bean>
+
+    <bean id="htmlformer" class="html.HtmlFormer" scope="prototype"></bean>
+
+</beans>

@@ -1,6 +1,7 @@
 package servlet;
 
 import html.HtmlFormer;
+import spring.SpringContextHolder;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +11,7 @@ import java.io.PrintWriter;
 
 public class ErrorServlet extends HttpServlet {
 
-    private final HtmlFormer html = new HtmlFormer();
+    private final HtmlFormer html = (HtmlFormer) SpringContextHolder.getContext().getBean("htmlformer");
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
