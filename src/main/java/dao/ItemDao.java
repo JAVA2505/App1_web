@@ -10,6 +10,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ItemDao extends Dao {
+    public ItemDao() {
+        System.out.println("idao");
+    }
+
     public List<Item> get() {
         List<Item> out = new LinkedList<>();
         try (Connection c = getConnection(); Statement st = c.createStatement()) {

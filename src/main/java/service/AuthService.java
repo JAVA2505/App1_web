@@ -4,6 +4,7 @@ import cart.CartItems;
 import com.google.gson.Gson;
 import dao.UserDao;
 import entity.User;
+import spring.SpringContextHolder;
 
 import java.util.Random;
 
@@ -21,12 +22,13 @@ public class AuthService {
     }
 
     public void addNewUser(String login, String pass, String phone, String city) {
-        User u = new User(new Random().nextInt(),
-                login,
-                pass,
-                phone,
-                city,
-                new Gson().toJson(new CartItems()));
+        User u = (User) SpringContextHolder.getContext().getBean("user");
+        u.setId(new Random().nextInt());
+        u.setLogin(login);
+        u.setPass(pass);
+        u.setPhone(phone);
+        u.setCity(city);
+        u.setItems(((Gson) SpringContextHolder.getContext().getBean("gson")).toJson(new CartItems()));
         udao.add(u);
     }
 

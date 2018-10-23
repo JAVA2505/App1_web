@@ -7,6 +7,7 @@ import entity.User;
 import html.HtmlFormer;
 import service.AuthService;
 import service.ItemService;
+import spring.SpringContextHolder;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,7 +30,7 @@ public class CartServlet extends HttpServlet {
             response.sendRedirect("/App1_web/");
         } else {
             String userItems = u.getItems();
-            CartItems itemsIds = new Gson().fromJson(userItems, CartItems.class);
+            CartItems itemsIds = ((Gson) SpringContextHolder.getContext().getBean("gson")).fromJson(userItems, CartItems.class);
 
             String id = request.getParameter("id");
             if (id != null) {
@@ -47,7 +48,7 @@ public class CartServlet extends HttpServlet {
                     itemsIds.items.remove(idMinus);
 
                 }
-                u.setItems(new Gson().toJson(itemsIds));
+                u.setItems(((Gson) SpringContextHolder.getContext().getBean("gson")).toJson(itemsIds));
                 auth.updateUser(u);
                 response.sendRedirect("/App1_web/cart");
             } else {

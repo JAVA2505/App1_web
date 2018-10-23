@@ -65,6 +65,7 @@ public class HtmlFormer {
         b.append("<div id='header' style='height: 83px; background-color: aqua'>");
         b.append(generateHeader(u.getLogin()));
         b.append("</div>");
+        //TODO add search div with text field and search button
         b.append("<div id='content' style='background-image: url(http://i.piccy.info/i9/956ac4bcccdc6759946b476394372745/1539107322/12937/1226734/bgMain.png)'>");
         b.append("<h1>Items:</h1>");
         b.append("            <table>");
@@ -78,6 +79,7 @@ public class HtmlFormer {
         b.append(formEnd());
         return b.toString();
     }
+
 
     public String formAuthorization() {
 
@@ -198,7 +200,7 @@ public class HtmlFormer {
         b.append("    </tr>");
         b.append("    <tr style='background-color: antiquewhite'>");
         b.append("      <td valign = \"bottom\">");
-        b.append("         <h" + ((mode) ? 4 : 3) + ">Category: " + i.getCat() + "</h" + ((mode) ? 4 : 3) + ">");
+        b.append("         <h" + (mode ? 4 : 3) + ">Category: " + i.getCat() + "</h" + ((mode) ? 4 : 3) + ">");
         b.append("      </td>");
         b.append("    </tr>");
         b.append("  </table>");

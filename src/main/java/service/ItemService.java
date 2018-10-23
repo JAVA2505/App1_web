@@ -1,21 +1,33 @@
 package service;
 
 import cache.ItemCache;
-import dao.ItemDao;
 import entity.Item;
-import org.springframework.context.support.AbstractXmlApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ItemService {
-    private final ItemDao idao = new ItemDao();
-    private static final AbstractXmlApplicationContext context = new ClassPathXmlApplicationContext("ItemCacheContext");
-    private static final ItemCache ic = (ItemCache)context.getBean("cacheItem");
-    public List<Item> get() {return new ArrayList<>(ic.items.values());
+
+    public ItemService() {
+        System.out.println("iserv");
     }
 
-    public Item getById(String id) {return ic.items.get(Integer.valueOf(id));
+    public List<Item> get() {
+        return new ArrayList<>(ItemCache.items.values());
+    }
+
+    public Item getById(String id) {
+        return ItemCache.items.get(Integer.valueOf(id));
+    }
+
+    public List<Item> getByWord(String q) {
+        List<Item> out = new LinkedList<>();
+        for (Item i : ItemCache.items.values()) {
+            if (i.getName().toLowerCase().contains(q.toLowerCase()) || i.getAbout().toLowerCase().contains(q.toLowerCase())) {
+                out.add(i);
+            }
+        }
+        return out;
     }
 }

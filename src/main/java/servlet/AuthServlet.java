@@ -13,7 +13,7 @@ import java.io.IOException;
 public class AuthServlet extends HttpServlet {
 
     private final AuthService auth = new AuthService();
-    private final html.HtmlFormer html = new HtmlFormer();
+    private final HtmlFormer html = new HtmlFormer();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
