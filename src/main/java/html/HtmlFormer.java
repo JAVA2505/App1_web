@@ -67,7 +67,16 @@ public class HtmlFormer {
         b.append("<div id='header' style='height: 83px; background-color: aqua'>");
         b.append(generateHeader(u.getLogin()));
         b.append("</div>");
-        //TODO add search div with text field and search button
+        b.append("<table  width = \"100%\"");
+        b.append("  <tr>");
+        b.append("    <td width = '60px' align = 'right'>");
+        b.append("          <form action='/App1_web/main method='GET'>");
+        b.append("              Input city:<input name='q'/><br/>");
+        b.append("              <input type='submit' value='Search'/>");
+        b.append("          </form>");
+        b.append("     </td>");
+        b.append("  </tr>");
+        b.append("</table>");
         b.append("<div id='content' style='background-image: url(http://i.piccy.info/i9/956ac4bcccdc6759946b476394372745/1539107322/12937/1226734/bgMain.png)'>");
         b.append("<h1>Items:</h1>");
         b.append("            <table>");
@@ -170,6 +179,17 @@ public class HtmlFormer {
         header.append("     </td>");
         header.append("    <td align=\"right\" width='100px'>");
         header.append("     <h3>" + userName + "</h3>");
+        header.append("     </td>");
+        header.append("  </tr>");
+        header.append("</table>");
+
+        header.append("<table  width = \"100%\"");
+        header.append("  <tr>");
+        header.append("    <td width = '60px' align = 'left'>");
+        header.append("          <form action='/App1_web/cart?q='0' method='GET'>");
+        header.append("              Input city:<input name='city'/><br/>");
+        header.append("              <input type='submit' value='Search'/>");
+        header.append("          </form>");
         header.append("     </td>");
         header.append("  </tr>");
         header.append("</table>");
