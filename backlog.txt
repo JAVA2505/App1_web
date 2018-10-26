@@ -1,0 +1,14 @@
+
+1 ) Create MainController without request mapping;
+2 ) Create Register...
+3 ) .. Item..
+4 ) .. Error..
+5 ) .. Cart..
+6 ) .. Account..
+7 ) Create account.jsp
+8 ) .. register.jsp
+9 ) .. error.jsp
+
+10) .. item.jsp
+11) .. cart.jsp
+12) .. main.jsp
