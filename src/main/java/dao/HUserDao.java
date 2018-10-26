@@ -4,7 +4,9 @@ import entity.User;
 import hibernate.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Component;
 
+@Component
 public class HUserDao implements UDaoInt {
     @Override
     public User getByLogin(String login) {
