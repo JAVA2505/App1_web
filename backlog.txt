@@ -6,7 +6,7 @@
 5 ) .. Cart..
 6 ) .. Account..
 7 ) Create account.jsp+
-8 ) .. register.jsp
+8 ) .. register.jsp+
 9 ) .. error.jsp
 
 10) .. item.jsp
