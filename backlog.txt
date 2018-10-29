@@ -5,7 +5,7 @@
 4 ) .. Error..
 5 ) .. Cart..
 6 ) .. Account..
-7 ) Create account.jsp
+7 ) Create account.jsp+
 8 ) .. register.jsp
 9 ) .. error.jsp
 
