@@ -1,6 +1,7 @@
 package controller;
 
 import html.HtmlFormer;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -9,8 +10,8 @@ import service.AuthService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
+@Controller
 public class RegisterController {
 
     private static final String REGISTER = "Register Page";

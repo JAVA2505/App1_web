@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import entity.Item;
 import entity.User;
 import html.HtmlFormer;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import service.AuthService;
 import service.ItemService;
@@ -17,6 +18,7 @@ import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.List;
 
+@Controller
 public class CartController {
 
     private final HtmlFormer html = new HtmlFormer();
