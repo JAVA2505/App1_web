@@ -182,7 +182,7 @@
     </style>
 </head>
 <body style='background-image: url(http://i.piccy.info/i9/956ac4bcccdc6759946b476394372745/1539107322/12937/1226734/bgMain.png)'>
-<form action='/main' method='POST' class="form-3">
+<form action='/App1_web/' method='POST' class="form-3">
     <p class="clearfix">
         <label for="login">Login</label>
         <input required type="text" name="login" id="login" placeholder="Логин">
@@ -195,9 +195,9 @@
         <input type="submit" name="submit" value="Sign In">
     </p>
 </form>
-<form action='/register' method='GET' class="form-3">
+<form action='/App1_web/register' method='GET' class="form-3">
     <p class="clearfix">
-        <input type="submit" name="submit" value="Sign Up">
+        <input type="submit" value="Sign Up">
     </p>
 </form>
 </body>

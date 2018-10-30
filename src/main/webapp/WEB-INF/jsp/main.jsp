@@ -32,7 +32,7 @@ b.append(generateHeader(u.getLogin()));
 
             </td>
         <td width = '60px' align = 'right'>
-                  <form action='/main' method='GET'>
+                  <form action='/App1_web/main' method='GET'>
                           Search:<input name='q'/><br/>
                           <input type='submit' value='Search'/>
                       </form>

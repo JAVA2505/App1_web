@@ -16,14 +16,14 @@
     <!--<servlet-name>AuthServlet</servlet-name>-->
     <!--<servlet-class>servlet.AuthServlet</servlet-class>-->
     <!--</servlet>-->
-    <!--<servlet>
+    <servlet>
         <servlet-name>MainServlet</servlet-name>
         <servlet-class>servlet.MainServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>servlet.RegisterServlet</servlet-class>
-    </servlet>
+    <!--<servlet>-->
+        <!--<servlet-name>RegisterServlet</servlet-name>-->
+        <!--<servlet-class>servlet.RegisterServlet</servlet-class>-->
+    <!--</servlet>-->
     <servlet>
         <servlet-name>ErrorServlet</servlet-name>
         <servlet-class>servlet.ErrorServlet</servlet-class>
@@ -41,18 +41,18 @@
         <servlet-class>servlet.AccountServlet</servlet-class>
     </servlet>
 
-    &lt;!&ndash;<servlet-mapping>&ndash;&gt;
-    &lt;!&ndash;<servlet-name>AuthServlet</servlet-name>&ndash;&gt;
-    &lt;!&ndash;<url-pattern>/</url-pattern>&ndash;&gt;
-    &lt;!&ndash;</servlet-mapping>&ndash;&gt;
+    <!--<servlet-mapping>-->
+    <!--<servlet-name>AuthServlet</servlet-name>-->
+    <!--<url-pattern>/</url-pattern>-->
+    <!--</servlet-mapping>-->
     <servlet-mapping>
         <servlet-name>MainServlet</servlet-name>
         <url-pattern>/main</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RegisterServlet</servlet-name>
-        <url-pattern>/register</url-pattern>
-    </servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>RegisterServlet</servlet-name>-->
+        <!--<url-pattern>/register</url-pattern>-->
+    <!--</servlet-mapping>-->
     <servlet-mapping>
         <servlet-name>ErrorServlet</servlet-name>
         <url-pattern>/error</url-pattern>
@@ -68,7 +68,7 @@
     <servlet-mapping>
         <servlet-name>AccountServlet</servlet-name>
         <url-pattern>/account</url-pattern>
-    </servlet-mapping>-->
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             10

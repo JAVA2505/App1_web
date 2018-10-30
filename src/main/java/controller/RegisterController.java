@@ -1,6 +1,6 @@
 package controller;
 
-import html.HtmlFormer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,10 +16,11 @@ import java.io.IOException;
 @RequestMapping("/register")
 public class RegisterController {
 
-    private final AuthService auth = new AuthService();
+    @Autowired
+    private AuthService auth;
 
     @GetMapping
-    public ModelAndView register() throws IOException {
+    public ModelAndView register() {
        return new ModelAndView("register");
     }
 

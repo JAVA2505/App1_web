@@ -14,13 +14,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @Controller
-@RequestMapping("/item")
+//@RequestMapping("/item")
 public class ItemController {
 
     private final HtmlFormer html = new HtmlFormer();
     private final ItemService iserv = new ItemService();
 
-    @GetMapping
+//    @GetMapping
     protected void doItem(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User u = (User) request.getSession().getAttribute("user");
         if (u != null) {

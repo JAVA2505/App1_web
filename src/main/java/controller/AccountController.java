@@ -14,12 +14,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Controller
-@RequestMapping("/account")
+//@RequestMapping("/account")
 public class AccountController {
 
     private UserDao udao = new UserDao();
 
-    @GetMapping
+//    @GetMapping
     protected ModelAndView doAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         User u = (User) request.getSession().getAttribute("user");

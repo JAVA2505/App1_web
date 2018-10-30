@@ -17,13 +17,13 @@ import java.io.PrintWriter;
 import java.util.List;
 
 @Controller
-@RequestMapping("/main")
+//@RequestMapping("/main")
 public class MainController {
 
     private final HtmlFormer html = new HtmlFormer();
     private final ItemService iserv = (ItemService) SpringContextHolder.getContext().getBean("iserv");
 
-    @GetMapping
+//    @GetMapping
     public void doMain(HttpServletRequest request, HttpServletResponse response) throws IOException{
 
         User u = (User) request.getSession().getAttribute("user");
