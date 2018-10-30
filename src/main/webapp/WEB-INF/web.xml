@@ -40,10 +40,7 @@
         <servlet-name>AccountServlet</servlet-name>
         <servlet-class>servlet.AccountServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>AccountServlet</servlet-name>
-        <url-pattern>/account</url-pattern>
-    </servlet-mapping>
+
     <!--<servlet-mapping>-->
     <!--<servlet-name>AuthServlet</servlet-name>-->
     <!--<url-pattern>/</url-pattern>-->
@@ -67,6 +64,10 @@
     <servlet-mapping>
         <servlet-name>CartServlet</servlet-name>
         <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccountServlet</servlet-name>
+        <url-pattern>/account</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
