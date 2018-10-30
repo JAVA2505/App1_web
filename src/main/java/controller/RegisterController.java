@@ -4,6 +4,7 @@ import html.HtmlFormer;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import service.AuthService;
 
@@ -12,12 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Controller
+@RequestMapping("/register")
 public class RegisterController {
 
-    private static final String REGISTER = "Register Page";
-    private static final String CONTENT_TYPE = "text/html;charset=UTF-8";
-
-    private final HtmlFormer html = new HtmlFormer();
     private final AuthService auth = new AuthService();
 
     @GetMapping

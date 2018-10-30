@@ -16,7 +16,7 @@
     <!--<servlet-name>AuthServlet</servlet-name>-->
     <!--<servlet-class>servlet.AuthServlet</servlet-class>-->
     <!--</servlet>-->
-    <servlet>
+    <!--<servlet>
         <servlet-name>MainServlet</servlet-name>
         <servlet-class>servlet.MainServlet</servlet-class>
     </servlet>
@@ -41,10 +41,10 @@
         <servlet-class>servlet.AccountServlet</servlet-class>
     </servlet>
 
-    <!--<servlet-mapping>-->
-    <!--<servlet-name>AuthServlet</servlet-name>-->
-    <!--<url-pattern>/</url-pattern>-->
-    <!--</servlet-mapping>-->
+    &lt;!&ndash;<servlet-mapping>&ndash;&gt;
+    &lt;!&ndash;<servlet-name>AuthServlet</servlet-name>&ndash;&gt;
+    &lt;!&ndash;<url-pattern>/</url-pattern>&ndash;&gt;
+    &lt;!&ndash;</servlet-mapping>&ndash;&gt;
     <servlet-mapping>
         <servlet-name>MainServlet</servlet-name>
         <url-pattern>/main</url-pattern>
@@ -68,7 +68,7 @@
     <servlet-mapping>
         <servlet-name>AccountServlet</servlet-name>
         <url-pattern>/account</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>-->
     <session-config>
         <session-timeout>
             10

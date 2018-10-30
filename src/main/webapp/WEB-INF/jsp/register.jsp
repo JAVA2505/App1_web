@@ -173,7 +173,7 @@
  </style> 
  </head> 
  <body style='background-image: url(http://i.piccy.info/i9/956ac4bcccdc6759946b476394372745/1539107322/12937/1226734/bgMain.png)'> 
- <form action='/App1_web/register' method='POST' class='form-3'> 
+ <form action='/register' method='POST' class='form-3'>
  <p class='clearfix'> 
          <label for='login'>Login</label> 
          <input required type='text' name='login' id='login' placeholder='Input login'> 
@@ -198,7 +198,7 @@
          <input type='submit' name='submit' value='Sign Up'> 
      </p>       
  </form> 
- <form action='/App1_web/' method='GET' class='form-3'> 
+ <form action='/' method='GET' class='form-3'>
  <p class='clearfix'> 
          <input type='submit' name='submit' value='Sign In'> 
      </p>       

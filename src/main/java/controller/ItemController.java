@@ -5,6 +5,7 @@ import entity.User;
 import html.HtmlFormer;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import service.ItemService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,8 +14,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @Controller
+@RequestMapping("/item")
 public class ItemController {
-
 
     private final HtmlFormer html = new HtmlFormer();
     private final ItemService iserv = new ItemService();

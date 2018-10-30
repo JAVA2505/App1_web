@@ -7,6 +7,7 @@ import entity.User;
 import html.HtmlFormer;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import service.AuthService;
 import service.ItemService;
 import spring.SpringContextHolder;
@@ -19,6 +20,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Controller
+@RequestMapping("/cart")
 public class CartController {
 
     private final HtmlFormer html = new HtmlFormer();

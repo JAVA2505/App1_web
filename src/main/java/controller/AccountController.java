@@ -5,21 +5,22 @@ import entity.User;
 import html.HtmlFormer;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @Controller
+@RequestMapping("/account")
 public class AccountController {
 
-    private HtmlFormer html = new HtmlFormer();
     private UserDao udao = new UserDao();
 
     @GetMapping
-    protected void doAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected ModelAndView doAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         User u = (User) request.getSession().getAttribute("user");
 
@@ -33,10 +34,7 @@ public class AccountController {
         String c = request.getParameter("city");
         if (l == null && p1 == null && p2 == null && ph == null && c == null) {
 
-            try (PrintWriter out = response.getWriter()) {
-
-                out.println(html.formUserAccount(u));
-            }
+            return new ModelAndView("account");
         } else {
 
             if (!l.equals("")) {
@@ -57,7 +55,7 @@ public class AccountController {
             }
 
             udao.updateUser(u);
-            response.sendRedirect("/App1_web/account");
+            return new ModelAndView("account");
         }
     }
 }
