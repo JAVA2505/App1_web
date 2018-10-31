@@ -11,7 +11,7 @@
 10) // auth.jsp+
 
 11) Complete main.jsp (with header and footer)+
-12) Create item.jsp
+12) Create item.jsp+
 13) Create cart.jsp
 
 14) Change CartController to work with jsp

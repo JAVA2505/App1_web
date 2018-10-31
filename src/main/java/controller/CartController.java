@@ -8,6 +8,7 @@ import html.HtmlFormer;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 import service.AuthService;
 import service.ItemService;
 import spring.SpringContextHolder;
@@ -28,7 +29,7 @@ public class CartController {
     private final AuthService auth = new AuthService();
 
     @GetMapping
-    protected void doCart(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected ModelAndView doCart(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User u = (User) request.getSession().getAttribute("user");
         if (u == null) {
             response.sendRedirect("/App1_web/");
@@ -54,20 +55,33 @@ public class CartController {
                 }
                 u.setItems(((Gson) SpringContextHolder.getContext().getBean("gson")).toJson(itemsIds));
                 auth.updateUser(u);
-                response.sendRedirect("/App1_web/cart");
+
+                ModelAndView out = new ModelAndView("cart");
+
+                out.addObject("user", u);
+                out.addObject("items", u.getItems());
+                return out;
+
+                //response.sendRedirect("/App1_web/cart");
             } else {
                 List<Item> items = new LinkedList<>();
                 for (Integer i : itemsIds.items) {
                     items.add(iserv.getById(i.toString()));
                 }
 
-                response.setContentType("text/html;charset=UTF-8");
-                try (PrintWriter out = response.getWriter()) {
-                    out.println(html.formCart(items, "Cart", u));
-                }
+                ModelAndView out = new ModelAndView("cart");
+
+                out.addObject("user", u);
+                out.addObject("items", items);
+                return out;
+               // response.setContentType("text/html;charset=UTF-8");
+                //ry (PrintWriter out = response.getWriter()) {
+                    //out.println(html.formCart(items, "Cart", u));
+                //}
             }
 
-        }
 
+        }
+        return null;
     }
 }
