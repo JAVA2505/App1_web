@@ -8,7 +8,14 @@
 7 ) Create account.jsp+
 8 ) .. register.jsp+
 9 ) .. error.jsp+
+10) // auth.jsp+
 
-10) .. item.jsp+
-11) .. cart.jsp+
-12) .. main.jsp
+11) Complete main.jsp (with header and footer)
+12) Create item.jsp
+13) Create cart.jsp
+
+14) Change CartController to work with jsp
+15) .. Item..
+
+16) Change account.jsp by previous model
+17) Change AccountController to work with jsp
