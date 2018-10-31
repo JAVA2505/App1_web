@@ -6,6 +6,7 @@ import html.HtmlFormer;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 import service.ItemService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,18 +22,22 @@ public class ItemController {
     private final ItemService iserv = new ItemService();
 
     @GetMapping
-    protected void doItem(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected ModelAndView doItem(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User u = (User) request.getSession().getAttribute("user");
         if (u != null) {
             String id = request.getParameter("id");
             Item i = iserv.getById(id);
-            response.setContentType("text/html;charset=UTF-8");
-            try (PrintWriter out = response.getWriter()) {
-                out.println(html.formItem("Item Page", u, i));
-            }
+
+            ModelAndView out = new ModelAndView("item");
+
+            out.addObject("item", i);
+            out.addObject("user", u);
+
+            return out;
+
         } else {
             response.sendRedirect("/App1_web/");
         }
-
+        return null;
     }
 }
