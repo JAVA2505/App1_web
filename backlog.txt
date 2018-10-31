@@ -10,7 +10,7 @@
 9 ) .. error.jsp+
 10) // auth.jsp+
 
-11) Complete main.jsp (with header and footer)
+11) Complete main.jsp (with header and footer)+
 12) Create item.jsp
 13) Create cart.jsp
 
