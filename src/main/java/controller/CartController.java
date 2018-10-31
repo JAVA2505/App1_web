@@ -20,14 +20,14 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Controller
-//@RequestMapping("/cart")
+@RequestMapping("/cart")
 public class CartController {
 
     private final HtmlFormer html = new HtmlFormer();
     private final ItemService iserv = new ItemService();
     private final AuthService auth = new AuthService();
 
-//    @GetMapping
+    @GetMapping
     protected void doCart(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User u = (User) request.getSession().getAttribute("user");
         if (u == null) {

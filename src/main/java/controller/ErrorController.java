@@ -7,10 +7,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-//@RequestMapping("/error")
+@RequestMapping("/error")
 public class ErrorController {
 
-//    @GetMapping
+    @GetMapping
     protected ModelAndView error() {
         /*response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
