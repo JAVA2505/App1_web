@@ -18,7 +18,6 @@ import java.io.PrintWriter;
 @RequestMapping("/item")
 public class ItemController {
 
-    private final HtmlFormer html = new HtmlFormer();
     private final ItemService iserv = new ItemService();
 
     @GetMapping

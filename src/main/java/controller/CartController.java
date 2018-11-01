@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import entity.Item;
 import entity.User;
 import html.HtmlFormer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,9 +25,13 @@ import java.util.List;
 @RequestMapping("/cart")
 public class CartController {
 
-    private final HtmlFormer html = new HtmlFormer();
     private final ItemService iserv = new ItemService();
-    private final AuthService auth = new AuthService();
+    private AuthService auth;
+
+    @Autowired
+    public CartController(AuthService auth) {
+        this.auth = auth;
+    }
 
     @GetMapping
     protected ModelAndView doCart(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -67,7 +72,7 @@ public class CartController {
                 out.addObject("items", items);
                 return out;
 
-            }else{
+            } else {
                 List<Item> items = new LinkedList<>();
                 for (Integer i : itemsIds.items) {
                     items.add(iserv.getById(i.toString()));
