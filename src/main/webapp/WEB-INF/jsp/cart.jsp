@@ -1,6 +1,7 @@
 <%@ page import="java.util.HashMap" %>
 <%@ page import="entity.Item" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%!
     Map<Item, Integer> myMap = new HashMap<>();
@@ -49,9 +50,9 @@
             </td>
         </tr>
     </table>
-    <table style="width: 100%">
+    <table width='100%' style="width: 100%">
 
-        <%-- <c:forEach items="${items}" var="i">
+         <%--<c:forEach items="${items}" var="i">
 
              allSum+=${item.price};
              <c:if test="${!myMap.containsKey(i)}">
@@ -68,7 +69,66 @@
 
          </c:forEach>--%>
 
-        <c:forEach items="${items}" var="item">
+        <%
+            allSum = 0;
+            Map<Item, Integer> myMap = new HashMap<>();
+            for(Item i : (List<Item>)request.getAttribute("items")){
+                allSum += i.getPrice();
+                if(!myMap.containsKey(i)){
+                    myMap.put(i, 1);
+                }else{
+                    myMap.put(i, myMap.get(i)+1);
+                }
+            }
+        %>
+
+           <%
+            for(Item i : myMap.keySet()){
+                %>
+
+             <tr style='width: 200px; background-color: antiquewhite'>
+                 <td align='center'>
+                     <h3><% out.println(i.getName()); %></h3>
+                     <img src='<% out.println(i.getsImg()); %>' style='height: 200px'/>
+                 </td>
+                 <td>
+                     <table height='400px' width='100%'>
+                         <tr style=' background-color: antiquewhite'>
+                             <td valign='top'>
+                                 <h3>Price:<% out.println(i.getPrice()*myMap.get(i)); %> UAH</h3>
+                                 <br>
+                                 <h3>Amount: <% out.println(myMap.get(i)); %></h3>
+                             </td>
+                         </tr>
+                         <tr style=' background-color: antiquewhite'>
+                             <td>
+                                 <h4>Summary: <% out.println(i.getAbout()); %></h4>
+                             </td>
+                         </tr>
+                         <tr style='background-color: antiquewhite'>
+                             <td valign='bottom'>
+                                 <h4>Category: <% out.println(i.getCat()); %></h4>
+                             </td>
+                         </tr>
+                     </table>
+                 </td>
+                 <td style='width: 100px'>
+                     <h4 align='center'><a href='/App1_web/cart?id=<% out.println(i.getId()); %>'><% out.println(i.getName()); %>++</a></h4>
+                     <br>
+                     <h4 align='center'><a href='/App1_web/cart?id=-<% out.println(i.getId()); %>'><% out.println(i.getName()); %>--</a></h4>
+                 </td>
+             </tr>
+
+
+             <%
+            }
+            %>
+
+
+
+
+
+        <%--<c:forEach items="${myMap.keySet}" var="item">
 
             <tr style='width: 200px; background-color: antiquewhite'>
                 <td align='center'>
@@ -79,9 +139,9 @@
                     <table height='400px' width='100%'>
                         <tr style=' background-color: antiquewhite'>
                             <td valign='top'>
-                                <h3>Price: ${item.price} UAH</h3>
+
                                 <br>
-                                <h3>Amount: </h3>
+                                <h3>Amount: <% out.println(myMap.get(request.getAttribute("item"))); %></h3>
                             </td>
                         </tr>
                         <tr style=' background-color: antiquewhite'>
@@ -102,16 +162,16 @@
                     <h4 align='center'><a href='/App1_web/cart?id=-${item.id}'>${item.name}--</a></h4>
                 </td>
             </tr>
-        </c:forEach>
+        </c:forEach>--%>
     </table>
 
-    <%--<table width='100%'>
+    <table width='100%'>
         <tr>
             <td align='right'>
-                <h2> Total sum: allSum UAH</h2>
+                <h2> Total sum: <% out.println(allSum); %> UAH</h2>
             </td>
         </tr>
-    </table>--%>
+    </table>
 
 </div>
 <div id='footer'>
