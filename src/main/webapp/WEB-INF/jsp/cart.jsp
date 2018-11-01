@@ -35,8 +35,8 @@
         </tr>
     </table>
 </div>
-<div id='content'
-     style='background-image: url(http://i.piccy.info/i9/956ac4bcccdc6759946b476394372745/1539107322/12937/1226734/bgMain.png)'>
+<div
+        style='background-image: url(http://i.piccy.info/i9/956ac4bcccdc6759946b476394372745/1539107322/12937/1226734/bgMain.png)'>
     <table width='100%'>
         <tr>
             <td align='left'>
@@ -49,28 +49,28 @@
             </td>
         </tr>
     </table>
-    <table>
+    <table style="width: 100%">
 
-        <c:forEach items="${items}" var="i">
+        <%-- <c:forEach items="${items}" var="i">
 
-            allSum+=${item.price};
-            <c:if test="${!myMap.containsKey(i)}">
+             allSum+=${item.price};
+             <c:if test="${!myMap.containsKey(i)}">
 
-                ${myMap.put(i, 1)};
+                 ${myMap.put(i, 1)};
 
-            </c:if>
-            <c:if test="${myMap.containsKey(i)}">
+             </c:if>
+             <c:if test="${myMap.containsKey(i)}">
 
-                ${myMap.put(i, myMap.get(i)+1)};
+                 ${myMap.put(i, myMap.get(i)+1)};
 
-            </c:if>
+             </c:if>
 
 
-        </c:forEach>
+         </c:forEach>--%>
 
-        <c:forEach items="${myMap.keySet}" var="i">
+        <c:forEach items="${items}" var="item">
 
-            <tr height='100%' style='width: 200px; background-color: antiquewhite'>
+            <tr style='width: 200px; background-color: antiquewhite'>
                 <td align='center'>
                     <h3>${item.name}</h3>
                     <img src='${item.sImg}' style='height: 200px'/>
@@ -79,7 +79,7 @@
                     <table height='400px' width='100%'>
                         <tr style=' background-color: antiquewhite'>
                             <td valign='top'>
-                                <h3>Price: ${i.price} UAH</h3>
+                                <h3>Price: ${item.price} UAH</h3>
                                 <br>
                                 <h3>Amount: </h3>
                             </td>
@@ -105,13 +105,13 @@
         </c:forEach>
     </table>
 
-    <table width='100%'>
+    <%--<table width='100%'>
         <tr>
             <td align='right'>
                 <h2> Total sum: allSum UAH</h2>
             </td>
         </tr>
-    </table>
+    </table>--%>
 
 </div>
 <div id='footer'>
