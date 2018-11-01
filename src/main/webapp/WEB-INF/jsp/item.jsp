@@ -8,7 +8,7 @@
 </head>
 <body link='#40E0D0' vlink='#F5FFFA' alink='#ff0000' bgcolor='orange'>
 <div id='header' style='height: 83px; background-color: aqua'>
-    <table width='100%' class='goods'>
+    <table width='100%'>
         <tr>
             <td width='60px' align='left'>
                 <img src='http://i.piccy.info/i9/db895864e575cb3520c8dd7bfe21a74c/1539106022/1226/1226734/logo.png'
@@ -58,7 +58,7 @@
                 </table>
             </td>
             <td style='width: 100px'>
-                <h3><a href='/App1_web/cart?id=${item.id}"'>Add to Cart</a></h3>
+                <h3><a href='/App1_web/cart?id=${item.id}'>Add to Cart</a></h3>
             </td>
         </tr>
 

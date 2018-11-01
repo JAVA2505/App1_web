@@ -35,9 +35,6 @@ public class MainController {
             } else {
                 String q = request.getParameter("q");
                 items = iserv.getByWord(q);
-                try (PrintWriter out = response.getWriter()) {
-                    out.println(html.formSearching("Weed Store", u, items, request.getParameter("q")));
-                }
             }
             ModelAndView out = new ModelAndView("main");
             out.addObject("items", items);
