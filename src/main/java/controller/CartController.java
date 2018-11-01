@@ -56,14 +56,6 @@ public class CartController {
                 u.setItems(((Gson) SpringContextHolder.getContext().getBean("gson")).toJson(itemsIds));
                 auth.updateUser(u);
 
-                ModelAndView out = new ModelAndView("cart");
-
-                out.addObject("user", u);
-                out.addObject("items", u.getItems());
-                return out;
-
-                //response.sendRedirect("/App1_web/cart");
-            } else {
                 List<Item> items = new LinkedList<>();
                 for (Integer i : itemsIds.items) {
                     items.add(iserv.getById(i.toString()));
@@ -74,10 +66,18 @@ public class CartController {
                 out.addObject("user", u);
                 out.addObject("items", items);
                 return out;
-               // response.setContentType("text/html;charset=UTF-8");
-                //ry (PrintWriter out = response.getWriter()) {
-                    //out.println(html.formCart(items, "Cart", u));
-                //}
+
+            }else{
+                List<Item> items = new LinkedList<>();
+                for (Integer i : itemsIds.items) {
+                    items.add(iserv.getById(i.toString()));
+                }
+
+                ModelAndView out = new ModelAndView("cart");
+
+                out.addObject("user", u);
+                out.addObject("items", items);
+                return out;
             }
 
 
