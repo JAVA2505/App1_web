@@ -124,10 +124,6 @@
             }
             %>
 
-
-
-
-
         <%--<c:forEach items="${myMap.keySet}" var="item">
 
             <tr style='width: 200px; background-color: antiquewhite'>
